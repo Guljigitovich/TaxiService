@@ -68,7 +68,7 @@ public class Client {
                 Client full name : %s
                 Client date of birth : %s
                 Client phone number : %s
-                Client money :  %s
+                Client money : %s
                 """,id,fullName,dateOfBirth,phoneNumber,money);
     }
 }
