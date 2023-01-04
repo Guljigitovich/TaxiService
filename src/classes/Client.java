@@ -72,3 +72,4 @@ public class Client {
                 """,id,fullName,dateOfBirth,phoneNumber,money);
     }
 }
+
