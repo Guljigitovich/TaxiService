@@ -17,8 +17,6 @@ public class Client {
         this.phoneNumber = phoneNumber;
         this.money = money;
 
-
-
     }
 
     public long getId() {
