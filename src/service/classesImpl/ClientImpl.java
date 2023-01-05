@@ -41,17 +41,22 @@ public class ClientImpl implements ClientService {
 
     @Override
     public Taxi orderTaxi(Long clientId, String taxiType) {
+        for (Client c: database.clientSet) {
+            for (Taxi t:) {
+
+            }
+        }
         return null;
     }
 
     @Override
     public Map<Integer, Client> getClientAge() {
-        Client count = null;
+        Map<Integer,Client>clientMap = new HashMap<>();
         for (Client c: database.clientSet) {
-            c.getDateOfBirth().minusYears(LocalDate.now().getDayOfYear());
-            count = c;
+            int age= c.getDateOfBirth().minusYears(LocalDate.now().getYear()).getYear();
+            clientMap.put(age,c);
         }
-        return null;
+        return clientMap;
     }
 
     @Override
