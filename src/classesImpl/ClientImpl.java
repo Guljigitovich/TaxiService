@@ -1,12 +1,12 @@
 package classesImpl;
 
 import classes.Client;
+import classes.Taxi;
 import dao.Database;
 import service.ClientService;
 
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ClientImpl implements ClientService {
     private Database database;

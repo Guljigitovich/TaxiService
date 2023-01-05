@@ -1,6 +1,7 @@
 package service;
 
 import classes.Client;
+import classes.Taxi;
 
 import java.util.List;
 import java.util.Map;
