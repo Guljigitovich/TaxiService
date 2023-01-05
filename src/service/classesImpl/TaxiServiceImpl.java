@@ -6,6 +6,7 @@ import enums.TaxiType;
 import service.TaxiService;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -16,11 +17,11 @@ public class TaxiServiceImpl implements TaxiService {
 
     @Override
     public StringBuilder add(Taxi taxi) {
+        List<Taxi> taxis = new ArrayList<>();
         for (Taxi taxi1 : database.taxis) {
             if (taxi1.getYear().isAfter(LocalDate.of(2010, 12,31))){
-                database.taxis.add(taxi);
-            }else {
-                database.taxis.add(taxi);
+                taxis.add(taxi);
+                database.taxis.addAll(taxis);
             }
         }
         return new StringBuilder("Successfully");
