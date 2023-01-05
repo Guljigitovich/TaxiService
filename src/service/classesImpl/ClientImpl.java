@@ -41,14 +41,17 @@ public class ClientImpl implements ClientService {
 
     @Override
     public Taxi orderTaxi(Long clientId, String taxiType) {
+        Taxi taxi = null;
         for (Client c: database.clientSet) {
             for (Taxi t: database.taxis) {
             if(clientId.equals(c.getId())){
-
+                if(taxiType.equals(t.getTaxiType().name())){
+                    taxi = t;
+                }
             }
             }
         }
-        return null;
+        return taxi;
     }
 
     @Override
