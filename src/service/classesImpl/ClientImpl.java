@@ -1,4 +1,4 @@
-package classesImpl;
+package service.classesImpl;
 
 public class ClientImpl {
 }
