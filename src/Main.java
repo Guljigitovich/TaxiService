@@ -13,7 +13,7 @@ public class Main {
         Client client1 = new Client(2L,"Samatova Aijan", LocalDate.of(1999,7,12),"0503500500", BigDecimal.valueOf(18000));
         Client client2 = new Client(3L,"Petrov Andrei", LocalDate.of(2000,8,15),"0777777777", BigDecimal.valueOf(14000));
         Client client3 = new Client(4L,"Adam Jonson", LocalDate.of(1997,11,1),"0778787878", BigDecimal.valueOf(20000));
-        Client client4 = new Client(5L,"Balanchaev Tukuncho", LocalDate.of(2004,15,28),"0555565758", BigDecimal.valueOf(12000));
+        Client client4 = new Client(5L,"Balanchaev Tukuncho", LocalDate.of(2004,10,28),"0555565758", BigDecimal.valueOf(12000));
         ArrayList<Client>clientArrayList = new ArrayList<>(
                 Arrays.asList(client1,client2,client4,client3,client)
         );
