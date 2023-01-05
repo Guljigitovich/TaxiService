@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class ClientImpl implements ClientService {
-    private Database database;
+    private Database database = new Database();
     @Override
     public String addClient(Client client) {
         this.database.clientSet.add(client);
@@ -58,7 +58,7 @@ public class ClientImpl implements ClientService {
     public Map<Integer, Client> getClientAge() {
         Map<Integer,Client>clientMap = new HashMap<>();
         for (Client c: database.clientSet) {
-            int age= c.getDateOfBirth().minusYears(LocalDate.now().getYear()).getYear();
+           int age = LocalDate.now().minusYears(c.getDateOfBirth().getYear()).getYear();
             clientMap.put(age,c);
         }
         return clientMap;
