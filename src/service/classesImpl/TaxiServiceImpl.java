@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class TaxiServiceImpl implements TaxiService {
-    Database database;
+    Database database = new Database();
 
     @Override
     public StringBuilder add(Taxi taxi) {

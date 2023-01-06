@@ -1,7 +1,11 @@
 import classes.Client;
+import classes.Driver;
+import classes.License;
 import classes.Taxi;
+import enums.Gender;
 import enums.TaxiType;
 import service.classesImpl.ClientImpl;
+import service.classesImpl.DriverImpl;
 import service.classesImpl.TaxiServiceImpl;
 
 import java.math.BigDecimal;
@@ -24,8 +28,21 @@ public class Main {
         Taxi taxi4 = new Taxi(4L, "Ist", "04kg004HKT", "black", LocalDate.of(2005, 5, 5), TaxiType.STANDART);
         List<Taxi> taxiList = new ArrayList<>(List.of(taxi1, taxi2, taxi3, taxi4));
 
+        License license = new License(1L,LocalDate.of(2011,11,13),LocalDate.of(2020,10,23));
+        License license1 = new License(2L,LocalDate.of(2012,9,15),LocalDate.of(2019,8,22));
+        ArrayList<License>licenseArrayList = new ArrayList<>(
+                Arrays.asList(license1,license)
+        );
+
+        Driver driver = new Driver(1L," Aman","Amanov", Gender.MALE,"0999999897",license,BigDecimal.valueOf(20000),taxi1 );
+        Driver driver1 = new Driver(2L," Kanat","Kanatov", Gender.MALE,"0777999897",license1,BigDecimal.valueOf(18000),taxi2 );
+        ArrayList<Driver>driverArrayList = new ArrayList<>(
+                Arrays.asList(driver,driver1)
+        );
+
         ClientImpl client5 = new ClientImpl();
         TaxiServiceImpl taxiService = new TaxiServiceImpl();
+        DriverImpl driver2 = new DriverImpl();
 
         while (true) {
             System.out.println("""
@@ -42,6 +59,10 @@ public class Main {
                     Press 11 grouping taxi .
                     Press 12 filter by taxi type .
                     Press 13 update taxi .
+                    Press 14 add driver .
+                    Press 15 add drivers .
+                    Press 16 find by  id .
+                    Press 17 find by name .
                     """);
             try {
                 System.out.println("Write the number !");
@@ -89,6 +110,18 @@ public class Main {
                         System.out.println("Write the taxi id : ");
                         Long idTaxi = new Scanner(System.in).nextLong();
                         taxiService.update(idTaxi);
+                    }
+                    case 14 -> System.out.println(driver2.add(driver));
+                    case 15 -> System.out.println(driver2.add(driverArrayList));
+                    case 16 -> {
+                        System.out.println("Write the driver id : ");
+                        Long idDriver = new Scanner(System.in).nextLong();
+                        System.out.println(driver2.findById(idDriver));
+                    }
+                    case 17 -> {
+                        System.out.println("Write the driver name : ");
+                        String driverName = new Scanner(System.in).nextLine();
+                        System.out.println(driver2.findByName(driverName));
                     }
                 }
             } catch (InputMismatchException e) {
