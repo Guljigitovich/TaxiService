@@ -1,10 +1,13 @@
 import classes.Client;
+import classes.Taxi;
+import enums.TaxiType;
 import service.classesImpl.ClientImpl;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -17,6 +20,11 @@ public class Main {
         ArrayList<Client>clientArrayList = new ArrayList<>(
                 Arrays.asList(client1,client2,client4,client3,client)
         );
+        Taxi taxi1 = new Taxi(1L,"E211","01kg001ADI","black",LocalDate.of(2020,20,20), TaxiType.BUSINESS);
+        Taxi taxi2 = new Taxi(2L,"Camry","02kg002GDJ","white",LocalDate.of(2015,15,15), TaxiType.COMFORT);
+        Taxi taxi3 = new Taxi(3L,"Fit","03kg003LRT","silver",LocalDate.of(2010,10,10), TaxiType.STANDART);
+        Taxi taxi4 = new Taxi(4L,"Ist","04kg004HKT","black",LocalDate.of(2005,5,5), TaxiType.STANDART);
+        List<Taxi> taxiList = new ArrayList<>(List.of(taxi1,taxi2,taxi3,taxi4));
 
         ClientImpl client5 = new ClientImpl();
         while (true){
